@@ -1,0 +1,1 @@
+DELETE FROM alunos WHERE id = 5;

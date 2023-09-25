@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+<main class="flex-1 p-6 flex gap-6">
+  <div class="flex flex-col flex-1 gap-4">
+    <div class="grid grid-rows-1 gap-4 flex-1">
+      {%if video_loading %}
+        <img src="{{ url_for('video_feed') }}" id="video_feed" alt="video_feed" />
+      {% else %}
+        <img src="https://revistasegurancaeletronica.com.br/wp-content/uploads/2021/01/Intel-lanc%CC%A7a-sistema-de-reconhecimento-facial-.jpg" alt="video" />
+      {% endif %}
+    </div>
+
+    {% include "face_footer.html" %}
+  </div>
+
+  <aside class="w-80 space-y-6">
+    <Separator orientation="horizontal" class="h-6" />
+    <form class="space-y-6" action="/" method="post">
+      <div class="space-y-2">
+        <span class="text-red-500">&nbsp;*</span>
+        <Label>Nome</Label>
+        <input type="text" name="nome" placeholder="Digite o nome" class="text-white bg-[#121214] border border-gray-700 rounded-md px-3 py-2 w-full" required>
+      </div>
+
+      <div class="space-y-2">
+        <span class="text-red-500">&nbsp;*</span>
+        <Label>Matricula</Label>
+        <input type="number" name="matricula" placeholder="Digite a matricula" class="text-white bg-[#121214] border border-gray-700 rounded-md px-3 py-2 w-full" required>
+      </div>
+
+      <div class="space-y-2">
+        <span class="text-red-500">&nbsp;*</span>
+        <Label>Ocupação</Label>
+        <select class="bg-[#121214] text-white border border-gray-700 rounded-md px-3 py-2 w-full" name="ocupacao" required>
+          <option>Selecione uma ocupação</option>
+          <option value="aluno">Aluno (a)</option>
+          <option value="professor">Professor (a)</option>
+          <option value="funcionario">Funcionario (a)</option>
+        </select>
+      </div>
+
+      <div class="space-y-4">
+        <Label>Configurações Facial</Label>
+        <select class="bg-[#121214] text-white border border-gray-700 rounded-md px-3 py-2 w-full" disabled>
+          <option>50x - 400x400</option>
+        </select>
+        <span class="block text-xs text-muted-foreground italic">
+          Você poderá customizar essa opção em breve
+        </span>
+      </div>
+
+      <button type="submit" class="w-full bg-white p-2 rounded-md text-black">
+        CADASTRAR PERFIL FACIAL
+      </button>
+    </form>
+  </aside>
+</main>
+{% endblock content %}
