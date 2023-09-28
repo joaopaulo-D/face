@@ -4,46 +4,53 @@
 
 <div class="relative overflow-x-auto shadow-md">
   <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
-    <caption class="p-5 text-lg font-semibold text-left text-gray-900 bg-white dark:text-white dark:bg-gray-800">
+    <caption class="p-5 text-lg font-semibold text-left text-white bg-[#121214] dark:text-white dark:bg-gray-800">
       Lista de usuarios
       <p class="mt-1 text-sm font-normal text-gray-500 dark:text-gray-400">
         Essa listagem e referente ao cadastro de perfil. Se o usuario estiver na listagem ele tem o perfil reconhecido e ja acesso liberado na portaria.
       </p>
     </caption>
-    <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+    <thead class="text-xs text-white uppercase bg-[#121214] dark:bg-[#121214] dark:text-gray-400">
       <tr>
         <th class="px-6 py-3">id</th>
         <th class="px-6 py-3">Nome</th>
         <th class="px-6 py-3">Matricula</th>
-        <th class="px-6 py-3">Ocupacao</th>
-        <th class="px-6 py-3">Data de criacao</th>
+        <th class="px-6 py-3">Ocupação</th>
+        <th class="px-6 py-3">Data de criação</th>
+        <th class="px-6 py-3">Quantidade de Fotos</th>
         <th class="px-6 py-3">Status</th>
         <th class="px-6 py-3">Acesso</th>
       </tr>
     </thead>
     {% for res in users %}
     <tbody>
-      <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50">
-        <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+      <tr class="bg-[#121214] border-b dark:bg-gray-800 dark:border-white hover:bg-gray-900">
+        <th scope="row" class="px-6 py-4 font-medium text-white whitespace-nowrap dark:text-white">
           {{ res[0] }}
         </th>
-        <td class="px-6 py-4">
+        <td class="px-6 py-4 uppercase">
           {{ res[1] }}
         </td>
         <td class="px-6 py-4">
           {{ res[2] }}
         </td>
-        <td class="px-6 py-4">
+        <td class="px-6 py-4 uppercase">
           {{ res[3] }}
         </td>
         <td class="px-6 py-4">
           {{ res[4] }}
         </td>
-        <td class="px-6 py-4 text-green-600 font-medium">
-          ✓ Perfil Reconhecido
+        <td class="px-6 py-4 font-medium">
+          <i class="fa-solid fa-circle-check text-md"></i>
+          50x 400x400
         </td>
         <td class="px-6 py-4 text-green-600 font-medium">
-          ✓ Liberado
+          <i class="fa-solid fa-video text-md"></i>
+          Perfil Reconhecido
+        </td>
+        <td class="px-6 py-4 text-green-600 font-medium">
+          <i class="fa-solid fa-circle-check text-md"></i>
+          Liberado
         </td>
       </tr>
     </tbody>

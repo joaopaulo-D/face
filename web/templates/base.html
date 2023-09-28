@@ -7,6 +7,7 @@
   <meta http-equiv="cache-control" content="no-cache">
   <meta http-equiv="pragma" content="no-cache">
   <meta http-equiv="expires" content="0">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
   <title>
     {% if title %}
       IC - {{ title }}
@@ -16,19 +17,20 @@
   </title>
 </head>
 
-<body class="bg-[#121214] text-white">
+<body class="fundo-hsl text-white">
   <div class="min-h-screen flex flex-col">
     <div class="px-6 py-3 flex items-center justify-between border-b">
       <h1 class="text-xl font-bold">RECONHECIMENTO FACIAL</h1>
       <div>
-        <a href="/face_list_users" class="mr-2 hover:text-blue-400">Usuarios</a>
-        <a href="/" class="hover:text-blue-400">Recochecimento</a>
+        <a href="/" class="hover:text-gray-400">Recochecimento</a>
+        <a href="/face_list_users" class="mr-2 hover:text-gray-400">Usuarios</a>
       </div>
     </div>
     {% block content %}{% endblock %}
   </div>
 
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://kit.fontawesome.com/d784c9c989.js" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.js"></script>
   <script src="../static/js/socket.js"></script>
 </body>

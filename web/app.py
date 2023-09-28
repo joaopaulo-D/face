@@ -56,7 +56,8 @@ def face_cadastro():
     
     if saveface:
       creatDir(name, "../uploads")
-      database.insert(nome, matricula, ocupacao)
+      
+    database.insert(nome, matricula, ocupacao)
 
   return render_template('face_cadastro.html', video_loading=saveface)
 
@@ -83,7 +84,7 @@ def generate_frames():
       resize = cv2.resize(roi_gray, (400, 400)) 
       
       if saveface:
-        cv2.putText(frame,str(savefaceC),(10,80), cv2.FONT_HERSHEY_SIMPLEX, 1,(0,255,255),1,cv2.LINE_AA)
+        cv2.putText(frame,str(savefaceC),(10,80), cv2.FONT_HERSHEY_SIMPLEX, 1,(255,255,255),1,cv2.LINE_AA)
         savefaceC += 1
         saveImg(resize)
         

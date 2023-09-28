@@ -3,11 +3,16 @@
 {% block content %}
 <main class="flex-1 p-6 flex gap-6">
   <div class="flex flex-col flex-1 gap-4">
-    <div class="grid grid-rows-1 gap-4 flex-1">
+    <div class="grid grid-rows-1 gap-4 flex-1 border-white border">
       {%if video_loading %}
-        <img src="{{ url_for('video_feed') }}" id="video_feed" alt="video_feed" />
+        <div class="m-auto">
+          <img src="{{ url_for('video_feed') }}" id="video_feed" alt="video_feed"/>
+        </div>
       {% else %}
-        <img src="https://revistasegurancaeletronica.com.br/wp-content/uploads/2021/01/Intel-lanc%CC%A7a-sistema-de-reconhecimento-facial-.jpg" alt="video" />
+        <div class="flex flex-col m-auto space-y-2">
+          <i class="fa-solid fa-users-viewfinder text-5xl text-center"></i>
+          <span class="text-white text-md">Recochecimento Facial</span>
+        </div>
       {% endif %}
     </div>
 
@@ -54,6 +59,14 @@
         CADASTRAR PERFIL FACIAL
       </button>
     </form>
+
+    <div class="p-6">
+      <p class="font-bold text-lg">Recomendacoes:</p>
+      <ul class="list-disc mt-2">
+        <li>Faça o mesmo de movimento possivel.</li>
+        <li>Não faça uso de utensílios, isso pode dificultar no recochecimento.</li>
+      </ul>
+    </div>
   </aside>
 </main>
 {% endblock content %}
